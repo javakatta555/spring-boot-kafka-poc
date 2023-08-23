@@ -30,15 +30,15 @@ public class SpringKafkaConfiguration {
 
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate() {
-        return new KafkaTemplate(this.producerFactory());
+        return new KafkaTemplate<>(this.producerFactory());
     }
 
     private ProducerFactory<String, String> producerFactory() {
-        Map<String, Object> configProps = new HashMap();
+        Map<String, Object> configProps = new HashMap<>();
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, this.url);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-        return new DefaultKafkaProducerFactory(configProps);
+        return new DefaultKafkaProducerFactory<>(configProps);
     }
 
     public ConsumerFactory<String, String> consumerFactory() {
