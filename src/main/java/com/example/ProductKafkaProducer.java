@@ -2,6 +2,7 @@ package com.example;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,6 +11,9 @@ public class ProductKafkaProducer {
 
     @Autowired
     private KafkaProducer<String,String> kafkaProducer;
+
+    @Autowired
+    private KafkaTemplate kafkaTemplate;
 
     public void publish_without_key(String topic, String message) {
         log.info("[publish_without_key] kafkaProducer {}", kafkaProducer);

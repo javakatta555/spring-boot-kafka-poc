@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductKafkaConsumer {
 
-    @KafkaListener(id = "foo", topics = "product")
+    @KafkaListener(id = "foo", topics = "${product.consumer.topic}")
     public void listen(String data, final Consumer consumer, Acknowledgment acknowledgment) {
         System.out.println("Message is :"+data);
         acknowledgment.acknowledge();
