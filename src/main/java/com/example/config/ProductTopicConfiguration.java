@@ -9,7 +9,7 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class ProductTopicConfiguration {
 
-    @Value(value = "${product.topic}")
+    @Value(value = "${product.topic.name}")
     private String topicName;
 
     @Value(value = "${product.partitions}")
