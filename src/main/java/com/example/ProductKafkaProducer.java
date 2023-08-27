@@ -13,7 +13,7 @@ public class ProductKafkaProducer {
     private KafkaProducer<String,String> kafkaProducer;
 
     @Autowired
-    private KafkaTemplate kafkaTemplate;
+    private KafkaTemplate<String,String> kafkaTemplate;
 
     public void publish_without_key(String topic, String message) {
         log.info("[publish_without_key] kafkaProducer {}", kafkaProducer);

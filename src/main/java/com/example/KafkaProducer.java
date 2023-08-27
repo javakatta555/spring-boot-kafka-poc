@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class KafkaProducer<K,V> {
-    @Autowired(required = false)
+    @Autowired
     private KafkaTemplate<K, V> kafkaTemplate;
     @Value("${kafka.enabled}")
     private boolean isKafkaEnabled;
