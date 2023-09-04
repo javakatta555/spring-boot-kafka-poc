@@ -1,4 +1,4 @@
-package com.example;
+package com.example.services;
 
 import org.apache.kafka.clients.consumer.Consumer;
 import org.springframework.kafka.annotation.KafkaListener;
